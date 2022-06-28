@@ -113,7 +113,10 @@ class HomePage extends StatelessWidget {
               child: Container(
                 margin: EdgeInsets.symmetric(horizontal: 4),
                 decoration: BoxDecoration(
-                    border: Border.all(color: Color(0xffBDBDBD), width: 0.4),
+                    border: Border.all(
+                      color: Color(0xffBDBDBD),
+                      width: 0.4,
+                    ),
                     borderRadius: BorderRadius.circular(30)),
                 child: Center(
                   child: Padding(
@@ -121,7 +124,9 @@ class HomePage extends StatelessWidget {
                     child: Text(
                       controller.categoryItems[index].toString(),
                       style: TextStyle(
-                          fontSize: 10.0.sp, color: Color(0xff616161)),
+                        fontSize: 10.0.sp,
+                        color: Color(0xff616161),
+                      ),
                     ),
                   ),
                 ),
