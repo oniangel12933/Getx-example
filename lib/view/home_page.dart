@@ -7,7 +7,6 @@ import 'package:shopping/view/product_page.dart';
 import 'package:sizer/sizer.dart';
 
 class HomePage extends StatelessWidget {
-
   final HomeController controller = Get.find<HomeController>();
   final CartController cc = Get.find<CartController>();
 
@@ -102,35 +101,37 @@ class HomePage extends StatelessWidget {
   }
 
   Widget wCategories() {
-    return Obx(() => SizedBox(
-          height: 30.0.sp,
-          child: ListView.builder(
-              itemCount: controller.categoryItems.length,
-              scrollDirection: Axis.horizontal,
-              physics: BouncingScrollPhysics(),
-              itemBuilder: (context, index) {
-                return GestureDetector(
-                  child: Container(
-                    margin: EdgeInsets.symmetric(horizontal: 4),
-                    decoration: BoxDecoration(
-                        border:
-                            Border.all(color: Color(0xffBDBDBD), width: 0.4),
-                        borderRadius: BorderRadius.circular(30)),
-                    child: Center(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 15),
-                        child: Text(
-                          controller.categoryItems[index].toString(),
-                          style: TextStyle(
-                              fontSize: 10.0.sp, color: Color(0xff616161)),
-                        ),
-                      ),
+    return Obx(
+      () => SizedBox(
+        height: 30.0.sp,
+        child: ListView.builder(
+          itemCount: controller.categoryItems.length,
+          scrollDirection: Axis.horizontal,
+          physics: BouncingScrollPhysics(),
+          itemBuilder: (context, index) {
+            return GestureDetector(
+              child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 4),
+                decoration: BoxDecoration(
+                    border: Border.all(color: Color(0xffBDBDBD), width: 0.4),
+                    borderRadius: BorderRadius.circular(30)),
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    child: Text(
+                      controller.categoryItems[index].toString(),
+                      style: TextStyle(
+                          fontSize: 10.0.sp, color: Color(0xff616161)),
                     ),
                   ),
-                  onTap: () {},
-                );
-              }),
-        ));
+                ),
+              ),
+              onTap: () {},
+            );
+          },
+        ),
+      ),
+    );
   }
 
   Widget wItemList(BuildContext context) {
@@ -211,7 +212,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 onTap: () {
-                  Get.to(()=>ProductPage(), arguments: [index]);
+                  Get.to(() => ProductPage(), arguments: [index]);
                 },
               );
             }));
