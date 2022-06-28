@@ -9,10 +9,9 @@ import 'package:shopping/view/cart_page.dart';
 import 'package:shopping/view/home_page.dart';
 
 class DashboardPage extends StatelessWidget {
-
- final DashboardController controller = Get.put(DashboardController());
- final CartController cc = Get.put(CartController());
- final HomeController hc = Get.put(HomeController());
+  final DashboardController controller = Get.put(DashboardController());
+  final CartController cc = Get.put(CartController());
+  final HomeController hc = Get.put(HomeController());
 
   @override
   Widget build(BuildContext context) {
@@ -36,10 +35,16 @@ class DashboardPage extends StatelessWidget {
     });
   }
 
-  List<BottomNavigationBarItem> bottomItems(){
+  List<BottomNavigationBarItem> bottomItems() {
     return [
-      BottomNavigationBarItem(icon: Icon(Feather.home) , label: "Home"),
-      BottomNavigationBarItem(icon: Icon(Feather.shopping_cart) , label: "Cart"),
+      BottomNavigationBarItem(
+        icon: Icon(Feather.home),
+        label: "Home",
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(Feather.shopping_cart),
+        label: "Cart",
+      ),
     ];
   }
 }
