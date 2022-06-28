@@ -136,87 +136,92 @@ class HomePage extends StatelessWidget {
 
   Widget wItemList(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    return Obx(() => controller.loading.value
-        ? Center(
-            child: CircularProgressIndicator(),
-          )
-        : ListView.builder(
-            itemCount: controller.itemItems.length,
-            shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            itemBuilder: (context, index) {
-              return GestureDetector(
-                child: Container(
-                  padding:
-                      EdgeInsets.only(top: 10, bottom: 10, left: 5, right: 10),
-                  margin: EdgeInsets.symmetric(vertical: 5),
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                        colors: [
-                          const Color(0xFFFFFFFF),
-                          const Color(0xB0E7E9E7),
-                        ],
-                        begin: Alignment(0.2, 0.0),
-                        end: Alignment(1.0, 0.0),
-                        tileMode: TileMode.clamp),
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: Row(
-                    children: [
-                      Image.network(
-                        controller.itemItems[index].image,
-                        width: size.width / 4,
-                        height: size.width / 4,
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Flexible(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(controller.itemItems[index].title),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  controller.itemItems[index].price.toString() +
-                                      " \$",
-                                  style: TextStyle(
-                                    fontSize: 12.0.sp,
-                                    color: Color(0xff465bd8),
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                FloatingActionButton(
-                                  backgroundColor: Color(0xff465bd8),
-                                  onPressed: () {
-                                    cc.addToCart(controller.itemItems[index]);
-                                  },
-                                  child: Icon(
-                                    Foundation.shopping_cart,
-                                    size: 20,
-                                  ),
-                                  mini: true,
-                                  materialTapTargetSize:
-                                      MaterialTapTargetSize.shrinkWrap,
-                                  heroTag: null,
-                                )
-                              ],
-                            )
+    return Obx(
+      () => controller.loading.value
+          ? Center(
+              child: CircularProgressIndicator(),
+            )
+          : ListView.builder(
+              itemCount: controller.itemItems.length,
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              itemBuilder: (context, index) {
+                return GestureDetector(
+                  child: Container(
+                    padding: EdgeInsets.only(
+                        top: 10, bottom: 10, left: 5, right: 10),
+                    margin: EdgeInsets.symmetric(vertical: 5),
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                          colors: [
+                            const Color(0xFFFFFFFF),
+                            const Color(0xB0E7E9E7),
                           ],
+                          begin: Alignment(0.2, 0.0),
+                          end: Alignment(1.0, 0.0),
+                          tileMode: TileMode.clamp),
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    child: Row(
+                      children: [
+                        Image.network(
+                          controller.itemItems[index].image,
+                          width: size.width / 4,
+                          height: size.width / 4,
                         ),
-                      ),
-                    ],
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Flexible(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(controller.itemItems[index].title),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    controller.itemItems[index].price
+                                            .toString() +
+                                        " \$",
+                                    style: TextStyle(
+                                      fontSize: 12.0.sp,
+                                      color: Color(0xff465bd8),
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  FloatingActionButton(
+                                    backgroundColor: Color(0xff465bd8),
+                                    onPressed: () {
+                                      cc.addToCart(controller.itemItems[index]);
+                                    },
+                                    child: Icon(
+                                      Foundation.shopping_cart,
+                                      size: 20,
+                                    ),
+                                    mini: true,
+                                    materialTapTargetSize:
+                                        MaterialTapTargetSize.shrinkWrap,
+                                    heroTag: null,
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                onTap: () {
-                  Get.to(() => ProductPage(), arguments: [index]);
-                },
-              );
-            }));
+                  onTap: () {
+                    Get.to(() => ProductPage(), arguments: [index]);
+                  },
+                );
+              },
+            ),
+    );
   }
 }
