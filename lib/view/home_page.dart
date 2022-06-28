@@ -186,9 +186,10 @@ class HomePage extends StatelessWidget {
                                   controller.itemItems[index].price.toString() +
                                       " \$",
                                   style: TextStyle(
-                                      fontSize: 12.0.sp,
-                                      color: Color(0xff465bd8),
-                                      fontWeight: FontWeight.bold),
+                                    fontSize: 12.0.sp,
+                                    color: Color(0xff465bd8),
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                                 FloatingActionButton(
                                   backgroundColor: Color(0xff465bd8),
