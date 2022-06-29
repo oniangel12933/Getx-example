@@ -48,7 +48,10 @@ class SignUpPage extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       "Sign Up",
-                      style: TextStyle(color: Colors.white, fontSize: 12.0.sp),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 12.0.sp,
+                      ),
                     ),
                   ),
                   style: ButtonStyle(
