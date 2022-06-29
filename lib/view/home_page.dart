@@ -113,11 +113,12 @@ class HomePage extends StatelessWidget {
               child: Container(
                 margin: EdgeInsets.symmetric(horizontal: 4),
                 decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Color(0xffBDBDBD),
-                      width: 0.4,
-                    ),
-                    borderRadius: BorderRadius.circular(30)),
+                  border: Border.all(
+                    color: Color(0xffBDBDBD),
+                    width: 0.4,
+                  ),
+                  borderRadius: BorderRadius.circular(30),
+                ),
                 child: Center(
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 15),
