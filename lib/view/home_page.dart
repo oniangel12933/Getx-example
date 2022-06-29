@@ -159,13 +159,14 @@ class HomePage extends StatelessWidget {
                     margin: EdgeInsets.symmetric(vertical: 5),
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
-                          colors: [
-                            const Color(0xFFFFFFFF),
-                            const Color(0xB0E7E9E7),
-                          ],
-                          begin: Alignment(0.2, 0.0),
-                          end: Alignment(1.0, 0.0),
-                          tileMode: TileMode.clamp),
+                        colors: [
+                          const Color(0xFFFFFFFF),
+                          const Color(0xB0E7E9E7),
+                        ],
+                        begin: Alignment(0.2, 0.0),
+                        end: Alignment(1.0, 0.0),
+                        tileMode: TileMode.clamp,
+                      ),
                       borderRadius: BorderRadius.circular(30),
                     ),
                     child: Row(
