@@ -55,8 +55,10 @@ class SignUpPage extends StatelessWidget {
                     ),
                   ),
                   style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all(Color(0xff465bd8))),
+                    backgroundColor: MaterialStateProperty.all(
+                      Color(0xff465bd8),
+                    ),
+                  ),
                 ),
               ),
               SizedBox(
