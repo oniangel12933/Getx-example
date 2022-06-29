@@ -91,7 +91,9 @@ class ProductPage extends StatelessWidget {
                 height: 20,
               ),
               Align(
-                  alignment: Alignment.centerLeft, child: Text(item.category)),
+                alignment: Alignment.centerLeft,
+                child: Text(item.category),
+              ),
               SizedBox(
                 height: 10,
               ),
