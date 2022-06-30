@@ -45,9 +45,10 @@ class _MarqueeWidgetState extends State<MarqueeWidget> {
       await Future.delayed(widget.pauseDuration);
       if (scrollController.hasClients)
         await scrollController.animateTo(
-            scrollController.position.maxScrollExtent,
-            duration: widget.animationDuration,
-            curve: Curves.ease);
+          scrollController.position.maxScrollExtent,
+          duration: widget.animationDuration,
+          curve: Curves.ease,
+        );
       await Future.delayed(widget.pauseDuration);
       if (scrollController.hasClients)
         await scrollController.animateTo(
