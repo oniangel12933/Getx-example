@@ -26,7 +26,7 @@ class _MarqueeWidgetState extends State<MarqueeWidget> {
   }
 
   @override
-  void dispose(){
+  void dispose() {
     scrollController.dispose();
     super.dispose();
   }
@@ -42,16 +42,19 @@ class _MarqueeWidgetState extends State<MarqueeWidget> {
 
   void scroll(_) async {
     while (scrollController.hasClients) {
-        await Future.delayed(widget.pauseDuration);
-        if(scrollController.hasClients)
-          await scrollController.animateTo(
-              scrollController.position.maxScrollExtent,
-              duration: widget.animationDuration,
-              curve: Curves.ease);
-        await Future.delayed(widget.pauseDuration);
-        if(scrollController.hasClients)
-          await scrollController.animateTo(0.0,
-              duration: widget.backDuration, curve: Curves.easeOut);
+      await Future.delayed(widget.pauseDuration);
+      if (scrollController.hasClients)
+        await scrollController.animateTo(
+            scrollController.position.maxScrollExtent,
+            duration: widget.animationDuration,
+            curve: Curves.ease);
+      await Future.delayed(widget.pauseDuration);
+      if (scrollController.hasClients)
+        await scrollController.animateTo(
+          0.0,
+          duration: widget.backDuration,
+          curve: Curves.easeOut,
+        );
     }
   }
 }
