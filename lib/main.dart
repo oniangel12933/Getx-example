@@ -21,20 +21,22 @@ class MyApp extends StatelessWidget {
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
     ]);
-    return Sizer(builder: (context, orientation, deviceType) {
-      return new GetMaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          brightness: Brightness.light,
-          primaryColor: Color(0xff465bd8),
-          scaffoldBackgroundColor: Colors.white,
-          textTheme: GoogleFonts.montserratTextTheme(
-            Theme.of(context).textTheme,
+    return Sizer(
+      builder: (context, orientation, deviceType) {
+        return new GetMaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            brightness: Brightness.light,
+            primaryColor: Color(0xff465bd8),
+            scaffoldBackgroundColor: Colors.white,
+            textTheme: GoogleFonts.montserratTextTheme(
+              Theme.of(context).textTheme,
+            ),
           ),
-        ),
-        defaultTransition: Transition.zoom,
-        home: SplashPage(),
-      );
-    });
+          defaultTransition: Transition.zoom,
+          home: SplashPage(),
+        );
+      },
+    );
   }
 }
