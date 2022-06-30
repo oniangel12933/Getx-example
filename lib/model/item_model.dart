@@ -1,7 +1,7 @@
 import 'package:hive_flutter/adapters.dart';
 
 @HiveType(typeId: 1)
-class ItemModel extends HiveObject{
+class ItemModel extends HiveObject {
   @HiveField(0)
   int id;
   @HiveField(1)
@@ -17,14 +17,15 @@ class ItemModel extends HiveObject{
   @HiveField(6)
   Rating rating;
 
-  ItemModel(
-      {this.id,
-      this.title,
-      this.price,
-      this.description,
-      this.category,
-      this.image,
-      this.rating});
+  ItemModel({
+    this.id,
+    this.title,
+    this.price,
+    this.description,
+    this.category,
+    this.image,
+    this.rating,
+  });
 
   ItemModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -53,7 +54,7 @@ class ItemModel extends HiveObject{
 }
 
 @HiveType(typeId: 2)
-class Rating extends HiveObject{
+class Rating extends HiveObject {
   dynamic rate;
   int count;
 
