@@ -4,7 +4,6 @@ import 'package:shopping/controller/splash_controller.dart';
 import 'package:sizer/sizer.dart';
 
 class SplashPage extends StatelessWidget {
-
   final SplashController controller = Get.put(SplashController());
 
   @override
@@ -15,9 +14,10 @@ class SplashPage extends StatelessWidget {
         child: Text(
           "Welcome...",
           style: TextStyle(
-              color: Colors.white,
-              fontSize: 15.0.sp,
-              fontWeight: FontWeight.bold),
+            color: Colors.white,
+            fontSize: 15.0.sp,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
     );

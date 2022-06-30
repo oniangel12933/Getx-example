@@ -77,22 +77,24 @@ class SignUpPage extends StatelessWidget {
 
   Widget wTextField(String hint, IconData icon) {
     return Container(
-        decoration: BoxDecoration(
-            color: Color(0xfff3f3f3), borderRadius: BorderRadius.circular(10)),
-        margin: EdgeInsets.only(bottom: 20),
-        child: TextField(
-          decoration: InputDecoration(
-              border: OutlineInputBorder(borderSide: BorderSide.none),
-              prefixIcon: Icon(icon),
-              hintText: hint),
-          onChanged: (text) {
-            // setState(() {
-            //   UserName = text;
-            //   //you can access nameController in its scope to get
-            //   // the value of text entered as shown below
-            //   //UserName = nameController.text;
-            // });
-          },
-        ));
+      decoration: BoxDecoration(
+          color: Color(0xfff3f3f3), borderRadius: BorderRadius.circular(10)),
+      margin: EdgeInsets.only(bottom: 20),
+      child: TextField(
+        decoration: InputDecoration(
+          border: OutlineInputBorder(borderSide: BorderSide.none),
+          prefixIcon: Icon(icon),
+          hintText: hint,
+        ),
+        onChanged: (text) {
+          // setState(() {
+          //   UserName = text;
+          //   //you can access nameController in its scope to get
+          //   // the value of text entered as shown below
+          //   //UserName = nameController.text;
+          // });
+        },
+      ),
+    );
   }
 }
