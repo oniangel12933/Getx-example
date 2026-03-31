@@ -6,7 +6,7 @@ class RemoteServices {
   static var client = dio.Dio();
 
   static Future<dynamic> fetchItems() async {
-    String theUrl = 'https://fakestoreapi.com/products';
+    String theUrl = 'https://fakestoreapi.com/products'; ///the server url
     try {
       dio.Response response = await client
           .get(theUrl,
